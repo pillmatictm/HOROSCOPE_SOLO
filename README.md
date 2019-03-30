@@ -1,0 +1,1 @@
+# HOROSCOPE_SOLO
