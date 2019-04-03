@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/zodiac_scroll_frag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ZodiacFragment">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/zodiacTraits_symbol"
+            android:layout_width="175dp"
+            android:layout_height="175dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/zodiac_symbol"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="40dp"
+            android:textSize="56sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Pisces" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_name"
+            tools:text="02/19 - 03/20" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_overView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/zodiacTraits_overView_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_date"
+            app:layout_constraintVertical_bias="0.625"
+            tools:text="Overview" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_overView_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/zodiacTraits_overView_title"
+            tools:text="Lorem ipsum dolor amet disrupt pork belly marfa beard hell of seitan, trust fund portland ennui squid proident irure enamel pin. Actually occupy tousled squid, kickstarter la croix dolore retro. La croix banh mi gluten-free air plant, dolore irony biodiesel knausgaard in fam tacos craft beer literally pinterest. Roof party salvia hashtag proident, thundercats actually XOXO farm-to-table whatever celiac meggings. In kogi commodo vexillologist." />
+
+        <TextView
+            android:id="@+id/zodiacTraits_love_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/zodiacTraits_love_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_overView_text"
+            app:layout_constraintVertical_bias="0.75"
+            tools:text="Love" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_love_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_love_title"
+            tools:text="Lorem ipsum dolor amet disrupt pork belly marfa beard hell of seitan, trust fund portland ennui squid proident irure enamel pin. Actually occupy tousled squid, kickstarter la croix dolore retro. La croix banh mi gluten-free air plant, dolore irony biodiesel knausgaard in fam tacos craft beer literally pinterest. Roof party salvia hashtag proident, thundercats actually XOXO farm-to-table whatever celiac meggings. In kogi commodo vexillologist." />
+
+        <TextView
+            android:id="@+id/zodiacTraits_wealth_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/zodiacTraits_wealth_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_love_text"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Wealth" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_wealth_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_wealth_title"
+            tools:text="Lorem ipsum dolor amet disrupt pork belly marfa beard hell of seitan, trust fund portland ennui squid proident irure enamel pin. Actually occupy tousled squid, kickstarter la croix dolore retro. La croix banh mi gluten-free air plant, dolore irony biodiesel knausgaard in fam tacos craft beer literally pinterest. Roof party salvia hashtag proident, thundercats actually XOXO farm-to-table whatever celiac meggings. In kogi commodo vexillologist." />
+
+        <TextView
+            android:id="@+id/zodiacTraits_famousFigures_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/zodiacTraits_famousFigures_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_wealth_text"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Famous Figures" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_famousFigures_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toStartOf="@+id/zodiacTraits_keywords_text"
+            app:layout_constraintHorizontal_bias="0.074"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_famousFigures_title"
+            tools:text="Rihanna\nKash Doll\nAlbert Einstein\nCommon\nJesus Christ" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_keywords_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/zodiacTraits_famousFigures_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Keywords " />
+
+        <TextView
+            android:id="@+id/zodiacTraits_keywords_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/zodiacTraits_famousFigures_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/zodiacTraits_famousFigures_text"
+            tools:text="Rihanna\nKash Doll\nAlbert Einstein\nCommon\nJesus Christ" />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
