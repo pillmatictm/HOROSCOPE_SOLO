@@ -13,9 +13,9 @@
 
         <ImageView
             android:id="@+id/zodiacTraits_symbol"
-            android:layout_width="175dp"
-            android:layout_height="175dp"
-            android:layout_marginTop="32dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="16dp"
             android:contentDescription="@string/zodiac_symbol"
             app:layout_constraintEnd_toEndOf="parent"
@@ -27,8 +27,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
-            android:textSize="56sp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:textSize="48sp"
+            app:layout_constraintEnd_toStartOf="@+id/zodiacTraits_symbol"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Pisces" />
@@ -37,27 +39,65 @@
             android:id="@+id/zodiacTraits_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
             android:textSize="28sp"
+            app:layout_constraintEnd_toStartOf="@+id/zodiacTraits_symbol"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_name"
             tools:text="02/19 - 03/20" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_rulingPlanet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/zodiacTraits_symbol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_date"
+            tools:text="Ruling Planet: NEPTUNE" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_element"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/zodiacTraits_symbol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_rulingPlanet"
+            tools:text="Element: Water" />
+
+        <TextView
+            android:id="@+id/zodiacTraits_modality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/zodiacTraits_symbol"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_element"
+            tools:text="Modality: Mutable" />
 
         <TextView
             android:id="@+id/zodiacTraits_overView_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="16dp"
             android:textSize="32sp"
             android:textStyle="bold"
+            android:text="@string/overview"
             app:layout_constraintBottom_toTopOf="@+id/zodiacTraits_overView_text"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_date"
-            app:layout_constraintVertical_bias="0.625"
-            tools:text="Overview" />
+            app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_modality"
+            />
 
         <TextView
             android:id="@+id/zodiacTraits_overView_text"
@@ -81,11 +121,12 @@
             android:layout_marginBottom="8dp"
             android:textSize="32sp"
             android:textStyle="bold"
+            android:text="@string/love"
             app:layout_constraintBottom_toTopOf="@+id/zodiacTraits_love_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_overView_text"
             app:layout_constraintVertical_bias="0.75"
-            tools:text="Love" />
+            />
 
         <TextView
             android:id="@+id/zodiacTraits_love_text"
@@ -110,11 +151,12 @@
             android:layout_marginBottom="8dp"
             android:textSize="32sp"
             android:textStyle="bold"
+            android:text="@string/wealth"
             app:layout_constraintBottom_toTopOf="@+id/zodiacTraits_wealth_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_love_text"
             app:layout_constraintVertical_bias="0.0"
-            tools:text="Wealth" />
+             />
 
         <TextView
             android:id="@+id/zodiacTraits_wealth_text"
@@ -139,11 +181,12 @@
             android:layout_marginBottom="8dp"
             android:textSize="24sp"
             android:textStyle="bold"
+            android:text="@string/famous_figures"
             app:layout_constraintBottom_toTopOf="@+id/zodiacTraits_famousFigures_text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/zodiacTraits_wealth_text"
             app:layout_constraintVertical_bias="0.0"
-            tools:text="Famous Figures" />
+            />
 
         <TextView
             android:id="@+id/zodiacTraits_famousFigures_text"
@@ -166,9 +209,10 @@
             android:layout_marginEnd="48dp"
             android:textSize="28sp"
             android:textStyle="bold"
+            android:text="@string/keywords"
             app:layout_constraintBaseline_toBaselineOf="@+id/zodiacTraits_famousFigures_title"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Keywords " />
+            />
 
         <TextView
             android:id="@+id/zodiacTraits_keywords_text"

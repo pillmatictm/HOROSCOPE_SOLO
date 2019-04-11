@@ -7,15 +7,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.simpleastrology.R;
+import org.pursuit.simpleastrology.fragments.FragmentInterface;
 import org.pursuit.simpleastrology.model.Astrology;
 
 import java.util.List;
 
 public class AstrologyAdapter extends RecyclerView.Adapter<AstrologyViewHolder> {
-    public List<Astrology> astrologyList;
+    private List<Astrology> astrologyList;
+    private FragmentInterface listener;
 
-    public AstrologyAdapter(List<Astrology> astrologyList) {
+    public AstrologyAdapter(List<Astrology> astrologyList, FragmentInterface listener) {
         this.astrologyList = astrologyList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -27,7 +30,7 @@ public class AstrologyAdapter extends RecyclerView.Adapter<AstrologyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull AstrologyViewHolder astrologyViewHolder, int i) {
-        astrologyViewHolder.onBind(astrologyList.get(i));
+        astrologyViewHolder.onBind(astrologyList.get(i),listener);
     }
 
     @Override
