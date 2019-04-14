@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Simple Astrology</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="zodiac_symbol">zodiac symbol</string>
+    <string name="linkedIn">Pilin\'s LinkedIn</string>
+    <string name="overview">Overview:</string>
+    <string name="love">Love:</string>
+    <string name="wealth">Wealth:</string>
+    <string name="famous_figures">Famous Figures:</string>
+    <string name="keywords">Keywords:</string>
+    <string name="sources">source:\nhttps://astrostyle.com\nhttps://broadly.vice.com/en_us\nhttps://www.astrology-zodiac-signs.com</string>
+    <string name="simple_astrology">Simple Astrology</string>
+    <string name="github">Pilin\'s GitHub</string>
+    <string name="choose">Choose Your Zodiac</string>
+</resources>

@@ -48,19 +48,19 @@ public class ZodiacFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static ZodiacFragment newInstance(Astrology model) {
+    public static ZodiacFragment newInstance(Astrology model, Astrology.ZodiacReading reading) {
         ZodiacFragment zodiacFragment = new ZodiacFragment();
         Bundle args = new Bundle();
-        args.putString(NAME, model.getZodiacName());
-        args.putString(DATE, model.getZodiacDate());
-        args.putString(PLANET, model.getRulingPlanet());
-        args.putString(ELEMENT, model.getElement());
-        args.putString(MODALITY, model.getModality());
-        args.putString(OVERVIEW, model.getOverview());
-        args.putString(LOVE, model.getLove());
-        args.putString(WEALTH, model.getWealth());
-        args.putStringArray(KEYWORDS, model.getKeywords());
-        args.putStringArray(CELEBRITIES, model.getFamousFigures());
+        args.putString(NAME, model.zodiacName);
+        args.putString(DATE, model.zodiacDate);
+        args.putString(PLANET, model.rulingPlanet);
+        args.putString(ELEMENT, model.element);
+        args.putString(MODALITY, model.modality);
+        args.putString(OVERVIEW, reading.overview);
+        args.putString(LOVE, reading.love);
+        args.putString(WEALTH, reading.wealth);
+        args.putStringArray(KEYWORDS, model.keywords);
+        args.putStringArray(CELEBRITIES, model.famousFigures);
         zodiacFragment.setArguments(args);
         return zodiacFragment;
     }

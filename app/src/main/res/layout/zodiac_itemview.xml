@@ -5,7 +5,7 @@
     android:id="@+id/zodiac_tiles"
     android:layout_width="132dp"
     android:layout_height="164dp"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     android:background="#00FFFFFF"
     android:padding="12dp">
 

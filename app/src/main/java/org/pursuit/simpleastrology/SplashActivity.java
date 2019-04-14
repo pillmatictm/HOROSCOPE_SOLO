@@ -3,27 +3,19 @@ package org.pursuit.simpleastrology;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.ImageView;
 import android.widget.VideoView;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
    public MediaPlayer mMediaPlayer;
    public int mCurrentVideoPosition;
-   private ImageView logo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
-        logo = findViewById(R.id.splash_logo);
-        logo.setImageResource(R.drawable.pisces_logo_clear);
 
         VideoView videoBG = findViewById(R.id.videoView);
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.smoke_splash_bg); // and then finally add your video resource. Make sure it is stored
@@ -42,20 +34,15 @@ public class SplashActivity extends AppCompatActivity {
             }
         });
 
-        try {
-            TimerTask timerTask = new TimerTask() {
-                @Override
-                public void run() {
-                    Intent i = new Intent(SplashActivity.this, MainActivity.class);
-                    startActivity(i);
-                    finish();
-                }
-            };
-            Timer timer = new Timer();
-            timer.schedule(timerTask, 4000);
-        } catch (Exception e) {
-            Log.e("ERROR in Splash Screen", e.toString());
-        }
+
+        int secondsDelayed = 1;
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
+                startActivity(new Intent(SplashActivity.this,
+                        MainActivity.class));
+                finish();
+            }
+        }, secondsDelayed * 4000);
+    }
 
     }
-}

@@ -25,15 +25,15 @@ private TextView zodiacDate;
         zodiacDate = itemView.findViewById(R.id.zodiac_date);
     }
 
-    public void onBind(final Astrology model, final FragmentInterface listener){
-        Picasso.get().load(model.getZodiacSymbol()).into(zodiacSymbol);
-        zodiacName.setText(model.getZodiacName());
-        zodiacDate.setText(model.getZodiacDate());
+    public void onBind(final Astrology model, final Astrology.ZodiacReading zodiacReading, final FragmentInterface listener){
+        Picasso.get().load(model.zodiacSymbol).into(zodiacSymbol);
+        zodiacName.setText(model.zodiacName);
+        zodiacDate.setText(model.zodiacDate);
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.toZodiacFrag(model);
+                listener.toZodiacFrag(model,zodiacReading);
             }
         });
 

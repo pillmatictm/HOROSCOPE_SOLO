@@ -3,4 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <!--<style name="splashBG" parent="Theme.AppCompat.Light.NoActionBar"></style>-->
+    <!--<item name="splashlogo_">@drawable/pisces_logo_clear</item>-->
 </resources>

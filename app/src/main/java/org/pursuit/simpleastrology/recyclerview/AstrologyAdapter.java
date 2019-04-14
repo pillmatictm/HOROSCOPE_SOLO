@@ -14,6 +14,7 @@ import java.util.List;
 
 public class AstrologyAdapter extends RecyclerView.Adapter<AstrologyViewHolder> {
     private List<Astrology> astrologyList;
+    private Astrology.ZodiacReading zodiacReading;
     private FragmentInterface listener;
 
     public AstrologyAdapter(List<Astrology> astrologyList, FragmentInterface listener) {
@@ -30,7 +31,7 @@ public class AstrologyAdapter extends RecyclerView.Adapter<AstrologyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull AstrologyViewHolder astrologyViewHolder, int i) {
-        astrologyViewHolder.onBind(astrologyList.get(i),listener);
+        astrologyViewHolder.onBind(astrologyList.get(i),zodiacReading,listener);
     }
 
     @Override

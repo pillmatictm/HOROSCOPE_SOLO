@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                         Log.d(TAG, "onResponse: " + response.body());
                         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
                         recyclerView.setAdapter(new AstrologyAdapter(response.body().getMessage(),fragmentInterface));
+                        recyclerView.setHasFixedSize(true);
                     }
 
                     @Override
@@ -55,10 +56,10 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     }
 
     @Override
-    public void toZodiacFrag(Astrology model) {
+    public void toZodiacFrag(Astrology model, Astrology.ZodiacReading reading) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_container, ZodiacFragment.newInstance(model))
+                .replace(R.id.fragment_container, ZodiacFragment.newInstance(model, reading))
                 .addToBackStack(ZodiacFragment.KEY)
                 .commit();
     }
