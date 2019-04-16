@@ -11,6 +11,7 @@ import com.squareup.picasso.Picasso;
 import org.pursuit.simpleastrology.R;
 import org.pursuit.simpleastrology.fragments.FragmentInterface;
 import org.pursuit.simpleastrology.model.Astrology;
+import org.pursuit.simpleastrology.model.ZodiacReading;
 
 public class AstrologyViewHolder extends RecyclerView.ViewHolder {
 private ImageView zodiacSymbol;
@@ -25,7 +26,7 @@ private TextView zodiacDate;
         zodiacDate = itemView.findViewById(R.id.zodiac_date);
     }
 
-    public void onBind(final Astrology model, final FragmentInterface listener){
+    public void onBind(final Astrology model, final ZodiacReading reading, final FragmentInterface listener){
         Picasso.get().load(model.getZodiacSymbol()).into(zodiacSymbol);
         zodiacName.setText(model.getZodiacName());
         zodiacDate.setText(model.getZodiacDate());
@@ -33,7 +34,7 @@ private TextView zodiacDate;
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.toZodiacFrag(model);
+                listener.toZodiacFrag(model, reading);
             }
         });
 

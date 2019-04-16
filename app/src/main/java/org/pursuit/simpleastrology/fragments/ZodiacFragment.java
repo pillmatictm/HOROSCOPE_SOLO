@@ -1,6 +1,5 @@
 package org.pursuit.simpleastrology.fragments;
 
-
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,17 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.pursuit.simpleastrology.R;
+import org.pursuit.simpleastrology.model.Astrology;
+import org.pursuit.simpleastrology.model.ZodiacReading;
 
 public class ZodiacFragment extends Fragment {
     public static final String KEY = "zodiac_Frag";
-    private FragmentInterface fragmentInterface;
 
 
     public ZodiacFragment() {
         // Required empty public constructor
     }
 
-    public static ZodiacFragment newInstance(){
+    public static ZodiacFragment newInstance(Astrology model, ZodiacReading zodiacReading){
         ZodiacFragment zodiacFragment = new ZodiacFragment();
         Bundle args = new Bundle();
         zodiacFragment.setArguments(args);
@@ -32,7 +32,7 @@ public class ZodiacFragment extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         if (context instanceof FragmentInterface) {
-            fragmentInterface = (FragmentInterface) context;
+            FragmentInterface fragmentInterface = (FragmentInterface) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement FragmentInterface");

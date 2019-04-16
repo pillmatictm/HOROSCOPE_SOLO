@@ -4,7 +4,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class RetrofitSingleton {
-    private static final String BASE_URL = "https://gist.github.com/";
+    private static final String BASE_URL = "https://gist.githubusercontent.com/pillmatictm/";
     private static Retrofit singleInstance;
 
     public static Retrofit getSingleInstance() {
@@ -22,3 +22,4 @@ public class RetrofitSingleton {
     private RetrofitSingleton() {
     }
 }
+
