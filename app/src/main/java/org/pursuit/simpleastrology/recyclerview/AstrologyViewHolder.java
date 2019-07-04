@@ -19,7 +19,6 @@ private TextView zodiacDate;
 
     public AstrologyViewHolder(@NonNull View itemView) {
         super(itemView);
-
         zodiacSymbol = itemView.findViewById(R.id.zodiac_symbol);
         zodiacName = itemView.findViewById(R.id.zodiac_name);
         zodiacDate = itemView.findViewById(R.id.zodiac_date);
@@ -27,7 +26,21 @@ private TextView zodiacDate;
 
     public void onBind(final Astrology model, final Astrology.ZodiacReading zodiacReading, final FragmentInterface listener){
         Picasso.get().load(model.zodiacSymbol).into(zodiacSymbol);
+
         zodiacName.setText(model.zodiacName);
+        if (model.element.equals("Water")){
+            zodiacName.setTextColor(itemView.getResources().getColor(R.color.colorWater));
+        }
+        if (model.element.equals("Fire")){
+            zodiacName.setTextColor(itemView.getResources().getColor(R.color.colorFire));
+        }
+        if (model.element.equals("Earth")){
+            zodiacName.setTextColor(itemView.getResources().getColor(R.color.colorEarth));
+        }
+        if (model.element.equals("Air")){
+            zodiacName.setTextColor(itemView.getResources().getColor(R.color.colorAir));
+        }
+
         zodiacDate.setText(model.zodiacDate);
 
         itemView.setOnClickListener(new View.OnClickListener() {

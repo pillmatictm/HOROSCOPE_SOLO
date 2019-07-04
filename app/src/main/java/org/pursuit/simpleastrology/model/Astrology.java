@@ -5,7 +5,7 @@ public class Astrology {
     public final String zodiacDate;
     public final String zodiacSymbol;
     public final String rulingPlanet;
-    public final String element;
+    public String element;
     public final String modality;
     public final ZodiacReading zodiacReading;
     public final String[] keywords;
