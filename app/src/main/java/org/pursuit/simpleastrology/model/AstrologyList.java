@@ -3,7 +3,7 @@ package org.pursuit.simpleastrology.model;
 import java.util.List;
 
 public class AstrologyList {
-    public List<Astrology> message;
+    private List<Astrology> message;
 
     public AstrologyList(List<Astrology> message) {
         this.message = message;

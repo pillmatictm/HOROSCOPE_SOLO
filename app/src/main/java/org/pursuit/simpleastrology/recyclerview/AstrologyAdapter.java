@@ -9,13 +9,12 @@ import android.view.ViewGroup;
 import org.pursuit.simpleastrology.R;
 import org.pursuit.simpleastrology.fragments.FragmentInterface;
 import org.pursuit.simpleastrology.model.Astrology;
-import org.pursuit.simpleastrology.model.ZodiacReading;
 
 import java.util.List;
 
 public class AstrologyAdapter extends RecyclerView.Adapter<AstrologyViewHolder> {
-    public List<Astrology> astrologyList;
-    private ZodiacReading reading;
+    private List<Astrology> astrologyList;
+    private Astrology.ZodiacReading zodiacReading;
     private FragmentInterface listener;
 
     public AstrologyAdapter(List<Astrology> astrologyList, FragmentInterface listener) {
@@ -32,7 +31,7 @@ public class AstrologyAdapter extends RecyclerView.Adapter<AstrologyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull AstrologyViewHolder astrologyViewHolder, int i) {
-        astrologyViewHolder.onBind(astrologyList.get(i),reading, listener);
+        astrologyViewHolder.onBind(astrologyList.get(i),zodiacReading,listener);
     }
 
     @Override

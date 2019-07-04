@@ -2,5 +2,12 @@
 <resources>
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorAccent">#AD18BD</color>
+    <color name="colorWater">#2D67AA</color>
+    <color name="colorEarth">#6417BB</color>
+    <color name="colorFire">#BD1860</color>
+    <color name="colorAir">#5FBEF5</color>
+
+    <!--<style name="splashBG" parent="Theme.AppCompat.Light.NoActionBar"></style>-->
+    <!--<item name="splashlogo_">@drawable/pisces_logo_clear</item>-->
 </resources>

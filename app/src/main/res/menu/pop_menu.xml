@@ -4,12 +4,12 @@
 
     <item
         android:id="@+id/pilin_linkedIn"
-        android:orderInCategory="10"
         android:title="@string/linkedIn"
         app:showAsAction="never" />
+
     <item
         android:id="@+id/pilin_gitHub"
-        android:orderInCategory="20"
-        android:title="@string/gitHub"
+        android:title="@string/github"
         app:showAsAction="never" />
+
 </menu>

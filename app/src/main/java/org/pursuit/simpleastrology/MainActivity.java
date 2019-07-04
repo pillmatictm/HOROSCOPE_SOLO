@@ -16,7 +16,6 @@ import org.pursuit.simpleastrology.fragments.FragmentInterface;
 import org.pursuit.simpleastrology.fragments.ZodiacFragment;
 import org.pursuit.simpleastrology.model.Astrology;
 import org.pursuit.simpleastrology.model.AstrologyList;
-import org.pursuit.simpleastrology.model.ZodiacReading;
 import org.pursuit.simpleastrology.network.AstrologyService;
 import org.pursuit.simpleastrology.network.RetrofitSingleton;
 import org.pursuit.simpleastrology.recyclerview.AstrologyAdapter;
@@ -46,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                         Log.d(TAG, "onResponse: " + response.body());
                         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
                         recyclerView.setAdapter(new AstrologyAdapter(response.body().getMessage(),fragmentInterface));
+                        recyclerView.setHasFixedSize(true);
                     }
 
                     @Override
@@ -56,13 +56,12 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     }
 
     @Override
-    public void toZodiacFrag(Astrology model, ZodiacReading reading) {
+    public void toZodiacFrag(Astrology model, Astrology.ZodiacReading reading) {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, ZodiacFragment.newInstance(model, reading))
                 .addToBackStack(ZodiacFragment.KEY)
                 .commit();
-        Log.d("interface", "toZodiacFrag: " + model + reading);
     }
 
     @Override
