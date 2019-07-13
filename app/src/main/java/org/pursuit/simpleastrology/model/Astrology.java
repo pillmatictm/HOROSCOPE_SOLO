@@ -21,7 +21,6 @@ public class Astrology {
         this.zodiacReading = zodiacReading;
         this.keywords = keywords;
         this.famousFigures = famousFigures;
-
 }
 
     public class ZodiacReading {

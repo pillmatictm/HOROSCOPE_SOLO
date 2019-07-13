@@ -28,12 +28,12 @@ import retrofit2.Retrofit;
 public class MainActivity extends AppCompatActivity implements FragmentInterface {
     private static final String TAG = "retrofit";
     private RecyclerView recyclerView;
-    private FragmentInterface fragmentInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        final FragmentInterface callback = this;
 
         recyclerView = findViewById(R.id.recyclerView);
         Retrofit retrofit = RetrofitSingleton.getSingleInstance();
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                     public void onResponse(Call<AstrologyList> call, Response<AstrologyList> response) {
                         Log.d(TAG, "onResponse: " + response.body());
                         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(), 3));
-                        recyclerView.setAdapter(new AstrologyAdapter(response.body().getMessage(),fragmentInterface));
+                        recyclerView.setAdapter(new AstrologyAdapter(response.body().getMessage(), callback));
                         recyclerView.setHasFixedSize(true);
                     }
 
@@ -56,10 +56,10 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
     }
 
     @Override
-    public void toZodiacFrag(Astrology model, Astrology.ZodiacReading reading) {
+    public void toZodiacFrag(Astrology model) {
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_container, ZodiacFragment.newInstance(model, reading))
+                .replace(R.id.fragment_container, ZodiacFragment.newInstance(model))
                 .addToBackStack(ZodiacFragment.KEY)
                 .commit();
     }
@@ -82,16 +82,13 @@ public class MainActivity extends AppCompatActivity implements FragmentInterface
                 browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/in/pillmatic/"));
                 startActivity(browserIntent);
                 return true;
-
             case R.id.pilin_gitHub:
                 Toast.makeText(this, toastMsg_gitHub, Toast.LENGTH_SHORT).show();
                 browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/pillmatictm"));
                 startActivity(browserIntent);
                 return true;
-
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }
