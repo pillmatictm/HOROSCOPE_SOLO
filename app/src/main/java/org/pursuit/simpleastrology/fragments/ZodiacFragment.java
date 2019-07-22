@@ -10,24 +10,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.squareup.picasso.Picasso;
+
 import org.pursuit.simpleastrology.R;
 import org.pursuit.simpleastrology.model.Astrology;
 
 public class ZodiacFragment extends Fragment {
     private FragmentInterface fragmentInterface;
     public static final String KEY = "zodiac_frag";
-    public static final String SYMBOL = "zodiac_symbol";
-    public static final String NAME = "zodiac_name";
-    public static final String DATE = "zodiac_date";
-    public static final String PLANET = "ruling_planet";
-    public static final String ELEMENT = "zodiac_element";
-    public static final String MODALITY = "zodiac_modality";
-    public static final String OVERVIEW = "zodiac_overview";
-    public static final String LOVE = "zodiac_love";
-    public static final String WEALTH = "zodiac_wealth";
-    public static final String KEYWORDS = "zodiac_keywords";
-    public static final String CELEBRITIES = "zodiac_famousFigures";
+    private static final String IMAGE = "zodiac_image";
+    private static final String NAME = "zodiac_name";
+    private static final String DATE = "zodiac_date";
+    private static final String PLANET = "ruling_planet";
+    private static final String ELEMENT = "zodiac_element";
+    private static final String MODALITY = "zodiac_modality";
+    private static final String OVERVIEW = "zodiac_overview";
+    private static final String LOVE = "zodiac_love";
+    private static final String WEALTH = "zodiac_wealth";
+    private static final String KEYWORDS = "zodiac_keywords";
+    private static final String CELEBRITIES = "zodiac_famousFigures";
     private String zodiacSymbolUrl;
     private String zodiacNameString;
     private String zodiacDateString;
@@ -37,8 +39,8 @@ public class ZodiacFragment extends Fragment {
     private String overviewString;
     private String loveString;
     private String wealthString;
-    private String[] keywordsString;
-    private String[] famousFiguresString;
+    private String[] keywordsStringArray;
+    private String[] famousFiguresStringArray;
 
     public ZodiacFragment() {
         // Required empty public constructor
@@ -47,6 +49,7 @@ public class ZodiacFragment extends Fragment {
     public static ZodiacFragment newInstance(Astrology model) {
         ZodiacFragment zodiacFragment = new ZodiacFragment();
         Bundle args = new Bundle();
+        args.putSerializable(IMAGE, model);
         args.putString(NAME, model.zodiacName);
         args.putString(DATE, model.zodiacDate);
         args.putString(PLANET, model.rulingPlanet);
@@ -76,7 +79,7 @@ public class ZodiacFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            zodiacSymbolUrl = getArguments().getString(SYMBOL);
+            zodiacSymbolUrl = ((Astrology) getArguments().getSerializable(IMAGE)).zodiacSymbol;
             zodiacNameString = getArguments().getString(NAME);
             zodiacDateString = getArguments().getString(DATE);
             rulingPlanetString = "Ruling Planet: " + getArguments().getString(PLANET);
@@ -85,8 +88,8 @@ public class ZodiacFragment extends Fragment {
             overviewString = getArguments().getString(OVERVIEW);
             loveString = getArguments().getString(LOVE);
             wealthString = getArguments().getString(WEALTH);
-            keywordsString = getArguments().getStringArray(KEYWORDS);
-            famousFiguresString = getArguments().getStringArray(CELEBRITIES);
+            keywordsStringArray = getArguments().getStringArray(KEYWORDS);
+            famousFiguresStringArray = getArguments().getStringArray(CELEBRITIES);
         }
     }
 
@@ -116,12 +119,40 @@ public class ZodiacFragment extends Fragment {
         zodiacDate.setText(zodiacDateString);
         rulingPlanet.setText(rulingPlanetString);
         element.setText(elementString);
+        if (elementString.substring(9).equals("Water")) {
+            zodiacName.setTextColor(getResources().getColor(R.color.colorWater));
+            element.setTextColor(getResources().getColor(R.color.colorWater));
+        }
+        if (elementString.substring(9).equals("Fire")) {
+            zodiacName.setTextColor(getResources().getColor(R.color.colorFire));
+            element.setTextColor(getResources().getColor(R.color.colorFire));
+        }
+        if (elementString.substring(9).equals("Earth")) {
+            zodiacName.setTextColor(getResources().getColor(R.color.colorEarth));
+            element.setTextColor(getResources().getColor(R.color.colorEarth));
+        }
+        if (elementString.substring(9).equals("Air")) {
+            zodiacName.setTextColor(getResources().getColor(R.color.colorAir));
+            element.setTextColor(getResources().getColor(R.color.colorAir));
+        }
+
         modality.setText(modalityString);
         overview.setText(overviewString);
         love.setText(loveString);
         wealth.setText(wealthString);
-        keywords.setText(keywordsString.toString());
-        famousFigures.setText(famousFiguresString.toString());
+
+        String keywordsString = "";
+        for (int i = 0; i < keywordsStringArray.length; i++) {
+            keywordsString += keywordsStringArray[i];
+        }
+
+        String famousFiguresString = "";
+        for (int j = 0; j < famousFiguresStringArray.length; j++) {
+            famousFiguresString += famousFiguresStringArray[j];
+        }
+
+        keywords.setText(keywordsString);
+        famousFigures.setText(famousFiguresString);
     }
 
     @Override

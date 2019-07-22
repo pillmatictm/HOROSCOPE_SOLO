@@ -1,6 +1,8 @@
 package org.pursuit.simpleastrology.model;
 
-public class Astrology {
+import java.io.Serializable;
+
+public class Astrology implements Serializable {
     public final String zodiacName;
     public final String zodiacDate;
     public final String zodiacSymbol;
