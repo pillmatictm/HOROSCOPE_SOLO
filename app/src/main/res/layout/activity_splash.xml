@@ -12,37 +12,26 @@
         android:layout_height="match_parent"
         android:scaleType="fitXY"
         android:src="@drawable/sparkly_night"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="-71dp" />
 
     <TextView
         android:id="@+id/splash_name"
         android:layout_width="match_parent"
-        android:layout_height="92dp"
+        android:layout_height="72dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/zeyada"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/elsie_swash_caps"
         android:text="@string/simple_astrology"
         android:textAlignment="center"
         android:textColor="#FFF"
-        android:textSize="64sp"
-        app:layout_constraintBottom_toBottomOf="@+id/splash_background_gif"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/splash_background_gif" />
-
-    <ImageView
-        android:id="@+id/splash_logo"
-        android:layout_width="168dp"
-        android:layout_height="143dp"
-        android:layout_marginBottom="392dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/pisces_logo_clear"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.823"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
